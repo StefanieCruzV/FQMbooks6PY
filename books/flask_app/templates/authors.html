@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous" />
+    <title>Dojo Survey</title>
+</head>
+
+<body>
+    <a href="/" class="my-3 p-3   text-decoration-none  text-blue " >Create a new Book</a>
+    <div class="row">
+        <div class="col">
+        <form class=" d-block my-3 p-3 border  bg-dark text-white " action="/add_author" method="post">
+            <h1 class="text-primary">New Author</h1>
+            <div class="mb-3 ">
+                <label for="name" class="form-label">Name: </label>
+                <input type="text" class="form-control" id="Name" name="first_name">
+            </div>
+            <div class="mb-3 ">
+                <label for="name" class="form-label">Last name: </label>
+                <input type="text" class="form-control" id="Name" name="last_name">
+            </div>
+          
+            <button type="submit" class="btn btn-primary">Add Author </button>
+        </form>
+        </div>
+        <div class="col">
+        <!-- <form class="  d-block my-3 p-3   text-black" > -->
+            <h1 class="text-warning text-center">All Authors</h1>
+            <div class="list-group">
+                {% for author in authors %}
+                <!-- dojo.name que viene de la clase parte rosa (clase Dojo) -->
+                <a href="/show_authors/{{author.id}}" class="list-group-item list-group-item-action bg-secondary text-white text-center">{{author.first_name}}  {{author.last_name}}</a>
+                {% endfor  %}
+            </div>    
+        <!-- </form> -->
+    </div>
+</div>
+    </div>
+    </form>
+<!-- 
+    <a href="#" class="mx-auto my-3 p-3 3 border bg-dark text-white " >Add Ninja</a> -->
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous" />
+    <title>Dojo Survey</title>
+</head>
+
+<body>
+    <a href="/get_authors" class="my-3 p-3   text-decoration-none  text-blue " >Home</a>
+    <div class="row">
+        <div class="col">
+        <form class=" d-block my-3 p-3 border  bg-dark text-white " action="/add_book" method="post">
+            <h1 class="text-primary">New Book</h1>
+            <div class="mb-3 ">
+                <label for="name" class="form-label">Name: </label>
+                <input type="text" class="form-control" id="Name" name="title">
+            </div>
+            <div class="mb-3 ">
+                <label for="name" class="form-label"> # of pages: </label>
+                <input type="text" class="form-control" id="Name" name="num_of_pages">
+            </div>
+            <button type="submit" class="btn btn-primary">Add book</button>
+        </form>
+        </div>
+        <div class="col">
+        <form class="  d-block my-3 p-3   text-black" action="/" method="post">
+            <h1 class="text-warning text-center">All Books</h1>
+            <div class="list-group">
+                {% for book in books %}
+                <!-- dojo.name que viene de la clase parte rosa (clase Dojo) -->
+                <a href="/show_books/{{book.id}}" class="list-group-item list-group-item-action bg-secondary text-white text-center">{{book.title}}</a>
+                {% endfor  %}
+             
+            </div>    
+        </form>
+    </div>
+</div>
+    </div>
+    </form>
+<!-- 
+    <a href="#" class="mx-auto my-3 p-3 3 border bg-dark text-white " >Add Ninja</a> -->
+</body>
+
+</html>
